@@ -32,6 +32,12 @@
       "$mod, Q, exec, ghostty"
       "$mod, D, exec, rofi -show drun"
     ];
+
+    input = {
+      touchpad = {
+        natural_scroll = true;
+      };
+    };
   };
 
   extraConfig = "
