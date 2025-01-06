@@ -8,7 +8,6 @@
   };
   systemd.enable = true;
   settings = {
-
     general = {
       "$mod" = "SUPER";
     };
@@ -31,9 +30,14 @@
     bind =
     [
       "$mod, Q, exec, ghostty"
-      "$mod SHIFT, B, exec, toggle_waybar"
-
+      "$mod, D, exec, rofi -show drun"
     ];
   };
-  
+
+  extraConfig = "
+    monitor = eDP-1, 1920x1080@60, 0x0, 1
+    xwayland {
+      force_zero_scaling = true
+    }
+  ";
 }
