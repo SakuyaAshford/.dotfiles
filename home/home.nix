@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -17,7 +17,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -34,6 +34,14 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # hyprland
+    swww
+    wayland
+    wl-clip-persist
+    wf-recorder
+
+    direnv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -69,14 +77,34 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+    NIXOS_OZONE_WL = "1";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true; 
-  
+  programs.kitty.enable = true; 
+  # wayland.windowManager.hyprland.enable = true;
+
   programs = {
     zsh = import ./zsh.nix { inherit config pkgs lib; };
     git = import ./git.nix { inherit config pkgs; };
+    
+    # pipewire = import ./pipewire.nix { inherit pkgs; };
+    
+    # wayland = import ./wayland.nix { inherit inputs pkgs; };
+    ghostty = import ./ghostty.nix { inherit inputs pkgs; };
+    waybar = import ./waybar.nix { inherit pkgs; };
+    # rofi = import ./rofi.nix { inherit pkgs; };
+    # swaync = import ./swaync.nix { inherit pkgs; };
+
   };
-  
+  imports = [ 
+  #  ./wayland.nix
+  #  ./rofi.nix
+  #  ./swaync.nix
+  ];
+  wayland.windowManager = {
+   hyprland = (import ./hyprland.nix { inherit pkgs; });  
+  };
+ 
 }

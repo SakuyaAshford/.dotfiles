@@ -12,6 +12,12 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+    
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+    };
 
   };
 
