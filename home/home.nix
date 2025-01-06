@@ -37,11 +37,12 @@
 
     # hyprland
     swww
+    poweralertd
     wayland
     wl-clip-persist
     wf-recorder
+     
 
-    direnv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -92,13 +93,14 @@
     # pipewire = import ./pipewire.nix { inherit pkgs; };
     
     # wayland = import ./wayland.nix { inherit inputs pkgs; };
-    ghostty = import ./ghostty.nix { inherit inputs pkgs; };
+    # ghostty = import ./ghostty.nix { inherit inputs pkgs; };
     waybar = import ./waybar.nix { inherit pkgs; };
     # rofi = import ./rofi.nix { inherit pkgs; };
     # swaync = import ./swaync.nix { inherit pkgs; };
 
   };
   imports = [ 
+    ./ghostty.nix
   #  ./wayland.nix
   #  ./rofi.nix
   #  ./swaync.nix
