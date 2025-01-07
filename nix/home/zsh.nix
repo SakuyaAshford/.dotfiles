@@ -32,7 +32,6 @@
       export GPG_TTY="$TTY"
     fi
 
-    [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
 
     # disable sort when completing `git checkout`
     zstyle ':completion:*:git-checkout:*' sort false
@@ -76,7 +75,7 @@
     plugins = [
       "sudo"
       "command-not-found"
-      "rust"
+      #  "rust"
       "direnv"
     ];
   };
@@ -97,16 +96,16 @@
       src = pkgs.zsh-syntax-highlighting;
       file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
     }
-    {
-      name = "powerlevel10k";
-      src = pkgs.zsh-powerlevel10k;
-      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-    }
-    {
-      name = "powerlevel10k-config";
-      src = lib.cleanSource ./p10k.zsh;
-      file = "p10k.zsh";
-    }
+    # {
+    #   name = "powerlevel10k";
+    #   src = pkgs.zsh-powerlevel10k;
+    #   file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    # }
+    # {
+    #   name = "powerlevel10k-config";
+    #   src = lib.cleanSource ./p10k.zsh;
+    #   file = "p10k.zsh";
+    # }
     {
       name = "fzf-tab";
       src = pkgs.zsh-fzf-tab;

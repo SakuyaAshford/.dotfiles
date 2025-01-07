@@ -100,6 +100,7 @@
   # wayland.windowManager.hyprland.enable = true;
 
   programs = {
+    neovim = import ./neovim.nix { inherit config pkgs; };
     zsh = import ./zsh.nix { inherit config pkgs lib; };
     git = import ./git.nix { inherit config pkgs; };
     
@@ -107,12 +108,14 @@
     
     # ghostty = import ./ghostty.nix { inherit inputs pkgs; };
     waybar = import ./waybar.nix { inherit pkgs; };
+    swaylock = import ./swaylock.nix { inherit config lib pkgs inputs; };
     # swaync = import ./swaync.nix { inherit pkgs; };
 
   };
   imports = [ 
     ./ghostty.nix
   #  ./wayland.nix
+    ./hyprlock.nix
     ./rofi.nix
     ./swaync.nix
   ];
