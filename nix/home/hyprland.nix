@@ -25,6 +25,7 @@
       "wl-paste --watch cliphist store &"
 
       "hyprctl setcursor Bibata-Modern-Ice 24 &"
+      "hyprlock"
     ];
 
     bind =
