@@ -127,6 +127,7 @@
     ./hyprlock.nix
     ./rofi.nix
     ./swaync.nix
+    ./swayosd.nix
   ];
 
   wayland.windowManager = {

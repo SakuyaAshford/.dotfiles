@@ -88,6 +88,8 @@
    wget
    zsh
 
+   # System
+   brightnessctl
    # 'Desktop'
    networkmanagerapplet
   ];
