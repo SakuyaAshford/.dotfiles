@@ -31,6 +31,10 @@
     [
       "$mod, Q, exec, ghostty"
       "$mod, D, exec, rofi -show drun"
+
+      "$mod, Escape, exec, swaylock"
+      "ALT, Escape, exec, hyprlock"
+
     ];
 
     input = {

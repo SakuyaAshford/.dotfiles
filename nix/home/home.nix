@@ -46,6 +46,7 @@
     swww
     poweralertd
     wayland
+    cliphist
     wl-clip-persist
     wf-recorder
      
