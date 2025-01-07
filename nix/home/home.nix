@@ -108,6 +108,7 @@
   # wayland.windowManager.hyprland.enable = true;
 
   programs = {
+    fzf = import ./fzf.nix { inherit pkgs; };
     neovim = import ./neovim.nix { inherit config pkgs; };
     zsh = import ./zsh.nix { inherit config pkgs lib; };
     git = import ./git.nix { inherit config pkgs; };
