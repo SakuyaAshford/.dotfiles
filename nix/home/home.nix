@@ -34,6 +34,13 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    # CLI
+    bat
+    bottom
+    disfetch
+    eza
+    fd
+    onefetch
 
     # hyprland
     swww
@@ -103,7 +110,7 @@
     neovim = import ./neovim.nix { inherit config pkgs; };
     zsh = import ./zsh.nix { inherit config pkgs lib; };
     git = import ./git.nix { inherit config pkgs; };
-    
+    # zoxide = import .zoxide.nix { inherit pkgs;  }; 
     # pipewire = import ./pipewire.nix { inherit pkgs; };
     
     # ghostty = import ./ghostty.nix { inherit inputs pkgs; };
