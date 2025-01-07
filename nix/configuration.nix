@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./core/font.nix
       ./core/security.nix
       ./core/service.nix
       ./core/sound.nix

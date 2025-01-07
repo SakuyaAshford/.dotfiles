@@ -116,7 +116,7 @@
     # pipewire = import ./pipewire.nix { inherit pkgs; };
     
     # ghostty = import ./ghostty.nix { inherit inputs pkgs; };
-    waybar = import ./waybar.nix { inherit pkgs; };
+    waybar = import ./waybar.nix { inherit config pkgs; };
     swaylock = import ./swaylock.nix { inherit config lib pkgs inputs; };
     # swaync = import ./swaync.nix { inherit pkgs; };
 
@@ -128,8 +128,8 @@
     ./rofi.nix
     ./swaync.nix
   ];
+
   wayland.windowManager = {
    hyprland = (import ./hyprland.nix { inherit pkgs; });  
-  };
- 
+  }; 
 }
