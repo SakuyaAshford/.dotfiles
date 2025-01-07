@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./core/security.nix
       ./core/service.nix
+      ./core/sound.nix
     ];
 
   # Bootloader.
