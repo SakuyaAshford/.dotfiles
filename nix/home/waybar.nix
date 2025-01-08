@@ -81,8 +81,9 @@ in {
       name = "bottom_bar";
       layer = "top";
       position = "bottom";
-      exclusibe = "true";
-      gtk-layer-shell = "true";
+      exclusibe = true;
+      fixed-center = true;
+      gtk-layer-shell = true;
       spacing = 0;
       margin-top = 0;
       margin-bottom = 0;
