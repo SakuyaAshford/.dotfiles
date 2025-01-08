@@ -6,7 +6,7 @@
   enable = true;
   lfs.enable = true;
   userName = "SakuyaAshford";
-  userEmail = "145197577+Sakuya3rd0@users.noreply.github.com";
+  userEmail = "182094416+SakuyaAshford@users.noreply.github.com";
 
   extraConfig = {
     pull = {

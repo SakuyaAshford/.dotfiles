@@ -31,6 +31,7 @@ in {
   enable = true;
   settings = [
     {
+      name = "top_bar";
       layer = "top";
       position = "top";
       exclusive = true;
@@ -75,6 +76,23 @@ in {
         icon-size = 24;
         separate-outputs = true;
       };
+    }
+    {
+      name = "bottom_bar";
+      layer = "top";
+      position = "bottom";
+      exclusibe = "true";
+      gtk-layer-shell = "true";
+      spacing = 0;
+      margin-top = 0;
+      margin-bottom = 0;
+      margin-left = 0;
+      margin-right = 0;
+      
+               
+   
+         
+   
     }
   ];
 
