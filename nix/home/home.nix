@@ -38,8 +38,9 @@
     bat
     bottom
     disfetch
-    eza
-    fd
+    eza        # ls replacement
+    fd         # find replacement
+    ripgrep    # grep replacement
     onefetch
 
     # hyprland
@@ -52,6 +53,9 @@
      
 
     # Apps
+    libreoffice
+    obs-studio
+
     inputs.zen-browser.packages."${system}".default
   ];
 
