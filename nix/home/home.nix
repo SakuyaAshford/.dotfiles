@@ -59,6 +59,7 @@
     wf-recorder
 
     # Apps
+    evince # pdf
     libreoffice
     obs-studio
 
