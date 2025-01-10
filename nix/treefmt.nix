@@ -6,11 +6,10 @@
   programs = {
     # Python
     ruff-check.enable = true;
-    ruff-format.enable = true
+    ruff-format.enable = true;
 
     # Rust
     rustfmt.enable = true;
-
 
     # Nix
     deadnix = {

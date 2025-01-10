@@ -1,4 +1,10 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -38,9 +44,9 @@
     bat
     bottom
     disfetch
-    eza        # ls replacement
-    fd         # find replacement
-    ripgrep    # grep replacement
+    eza # ls replacement
+    fd # find replacement
+    ripgrep # grep replacement
     onefetch
 
     # hyprland
@@ -51,7 +57,6 @@
     wl-clipboard
     wl-clip-persist
     wf-recorder
-     
 
     # Apps
     libreoffice
@@ -59,9 +64,8 @@
 
     inputs.zen-browser.packages."${system}".default
 
-
     # Utility
-    # nixfmt-rfc-style 
+    # nixfmt-rfc-style
     # treefmt2
   ];
 
@@ -99,7 +103,7 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
     NIXOS_OZONE_WL = "1";
-    
+
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
@@ -113,8 +117,8 @@
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true; 
-  programs.kitty.enable = true; 
+  programs.home-manager.enable = true;
+  programs.kitty.enable = true;
   # wayland.windowManager.hyprland.enable = true;
 
   programs = {
@@ -122,18 +126,25 @@
     neovim = import ./neovim.nix { inherit config pkgs; };
     zsh = import ./zsh.nix { inherit config pkgs lib; };
     git = import ./git.nix { inherit config pkgs; };
-    zoxide = import ./zoxide.nix { inherit pkgs; }; 
+    zoxide = import ./zoxide.nix { inherit pkgs; };
     # pipewire = import ./pipewire.nix { inherit pkgs; };
-    
+
     # ghostty = import ./ghostty.nix { inherit inputs pkgs; };
     waybar = import ./waybar.nix { inherit config pkgs; };
-    swaylock = import ./swaylock.nix { inherit config lib pkgs inputs; };
+    swaylock = import ./swaylock.nix {
+      inherit
+        config
+        lib
+        pkgs
+        inputs
+        ;
+    };
     # swaync = import ./swaync.nix { inherit pkgs; };
 
   };
-  imports = [ 
+  imports = [
     ./ghostty.nix
-  #  ./wayland.nix
+    #  ./wayland.nix
     ./hyprlock.nix
     ./rofi.nix
     ./swaync.nix
@@ -141,6 +152,6 @@
   ];
 
   wayland.windowManager = {
-   hyprland = (import ./hyprland.nix { inherit pkgs; });  
-  }; 
+    hyprland = (import ./hyprland.nix { inherit pkgs; });
+  };
 }

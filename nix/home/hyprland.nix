@@ -1,7 +1,8 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
   enable = true;
   xwayland = {
     enable = true;
@@ -28,8 +29,7 @@
       "hyprlock"
     ];
 
-    bind =
-    [
+    bind = [
       "$mod, Q, exec, ghostty"
       "$mod, D, exec, rofi -show drun"
 

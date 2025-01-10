@@ -1,9 +1,9 @@
 {
-  inputs, 
+  inputs,
   pkgs,
   ...
 }:
-let 
+let
   ghostty = inputs.ghostty.packages.x86_64-linux.default;
 in
 {

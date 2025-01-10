@@ -2,17 +2,22 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./core/font.nix
-      ./core/security.nix
-      ./core/service.nix
-      ./core/sound.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./core/font.nix
+    ./core/security.nix
+    ./core/service.nix
+    ./core/sound.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -20,9 +25,12 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -46,9 +54,12 @@
   users.users.sakuya = {
     isNormalUser = true;
     description = "sakuya";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -56,8 +67,6 @@
 
   # programs.hyprland.ebabke - true;
 
-  
-   
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.default;
@@ -68,7 +77,10 @@
     xdgOpenUsePortal = true;
     config = {
       common.default = [ "gtk" ];
-      hyprland.default = [ "gtk" "hyprland" ];
+      hyprland.default = [
+        "gtk"
+        "hyprland"
+      ];
     };
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
@@ -79,21 +91,20 @@
     enable = true;
   };
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   git
-   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   wget
-   zsh
+    git
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    zsh
 
-   # System
-   brightnessctl
-   # 'Desktop'
-   networkmanagerapplet
+    # System
+    brightnessctl
+    # 'Desktop'
+    networkmanagerapplet
   ];
-  
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {

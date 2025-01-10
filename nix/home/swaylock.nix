@@ -6,7 +6,7 @@
   ...
 }:
 {
-  
+
   enable = true;
   package = pkgs.swaylock-effects;
   settings = {
@@ -50,4 +50,3 @@
     layout-text-color = "FBF1C7FF";
   };
 }
-
