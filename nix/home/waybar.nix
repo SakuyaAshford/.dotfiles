@@ -52,12 +52,15 @@ in
         "hyprland/window"
       ];
 
-      # modules-center = [
-      #   "clock#time"
-      #   "custom/separator"
-      #   "clock#week"
-
-      # ];
+      modules-center = [
+        "clock#time"
+        "custom/separator"
+        "clock#week"
+        "custom/separator_dot"
+        "clock#month"
+        "custom/separator"
+        "clock#calendar"
+      ];
 
       modules-right = [
         "group/network-modules"
@@ -67,6 +70,8 @@ in
         "tray"
         "group/powermenu"
       ];
+
+      # Modules Left
 
       "image" = {
         path = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
@@ -93,6 +98,48 @@ in
         separate-outputs = true;
       };
 
+      # Modules Center
+      "clock#time" = {
+        format = "{:%I:%M %p}";
+        tooltip = false;
+      };
+
+      "custom/separator" = {
+        format = "|";
+        tooltip = false;
+      };
+
+      "custom/separator_dot" = {
+        format = "•";
+        tooltip = false;
+      };
+
+      "clock#week" = {
+        format = "{:%a}";
+        tooltip = false;
+      };
+
+      "clock#month" = {
+        format = "{:%h}";
+        tooltip = false;
+      };
+
+      "clock#calendar" = {
+        format = "{:%F}";
+        tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        calendar = {
+          mode = "month";
+          on-scroll = 1;
+          format = {
+            months = "<span color='${color.white}'><b>{}</b></span>";
+            days = "<span color='${color.gray1}'><b>{}</b></span>";
+            weekdays = "<span color='${color.blue}'><b>{}</b></span>";
+            today = "<span color='${color.white}'><b><u>{}</u></b></span>";
+          };
+        };
+      };
+
+      # Modules Right
       "group/network-modules" = {
         modules = [
           "network#icon"
@@ -290,217 +337,257 @@ in
     }
   ];
   style = ''
-    /* Global */
-    * {
-      all: unset;
-      font-family: "GeistMono Nerd Font Propo", sans-serif;
-      font-size: 11pt;
-      font-weight: 500;
+        /* Global */
+        * {
+          all: unset;
+          font-family: "GeistMono Nerd Font Propo", sans-serif;
+          font-size: 11pt;
+          font-weight: 500;
+        }
+
+        /* Menu */
+        menu {
+          background: ${color.black0};
+          border-radius: 12px;
+        }
+
+        menu separator {
+          background: ${color.black3};
+        }
+
+        menu menuitem {
+          background: transparent;
+          padding: 0.5rem;
+          transition: 300ms linear;
+        }
+
+        menu menuitem:hover {
+          background: lighter(${color.black3});
+        }
+
+        menu menuitem:first-child {
+          border-radius: 12px 12px 0 0;
+        }
+
+        menu menuitem:last-child {
+          border-radius: 0 0 12px 12px;
+        }
+
+        menu menuitem:only-child {
+          border-radius: 12px;
+        }
+
+        /* Tooltip */
+        tooltip {
+          background: ${color.black0};
+          border-radius: 12px;
+        }
+
+        tooltip label {
+          margin: 0.5rem;
+        }
+
+        /* Waybar */
+        window#waybar {
+          background: ${color.black0};
+        }
+
+        .modules-left {
+          padding-left: 0.25rem;
+        }
+
+        .modules-right {
+          padding-right: 0.25rem;
+        }
+
+        /* Modules */
+        #workspaces,
+        #workspaces button,
+        #idle_inhibitor,
+        #network-modules,
+        #wireplumber-modules,
+        #backlight-modules,
+        #battery-modules,
+        #tray,
+        #clock,
+        #custom-exit,
+        #custom-lock,
+        #custom-suspend,
+        #custom-reboot,
+        #custom-power {
+          background: ${color.black3};
+          border-radius: 8px;
+          margin: 0.5rem 0.25rem;
+          transition: 300ms linear;
+        }
+
+        #image,
+        #window,
+        #network.address,
+        #wireplumber.volume,
+        #backlight.percent,
+        #battery.capacity,
+        #tray,
+        #clock {
+          padding: 0.25rem 0.75rem;
+        }
+
+        #idle_inhibitor,
+        #network.icon,
+        #wireplumber.icon,
+        #backlight.icon,
+        #battery.icon,
+        #custom-exit,
+        #custom-lock,
+        #custom-suspend,
+        #custom-reboot,
+        #custom-power {
+          background: ${color.blue};
+          color: ${color.black3};
+          border-radius: 8px;
+          font-size: 13pt;
+          padding: 0.25rem;
+          min-width: 1.5rem;
+          transition: 300ms linear;
+        }
+
+        /* Workspaces */
+        #workspaces button {
+          margin: 0;
+          padding: 0.25rem;
+          min-width: 1.5rem;
+        }
+
+        #workspaces button label {
+          color: ${color.white};
+        }
+
+        #workspaces button.empty label {
+          color: ${color.gray0};
+        }
+
+        #workspaces button.urgent label,
+        #workspaces button.active label {
+          color: ${color.black3};
+        }
+
+        #workspaces button.urgent {
+          background: ${color.red};
+        }
+
+        #workspaces button.active {
+          background: ${color.blue};
+        }
+
+        /* Idle Inhibitor */
+        #idle_inhibitor {
+          background: ${color.black3};
+          color: ${color.blue};
+        }
+
+        #idle_inhibitor.deactivated {
+          color: ${color.gray0};
+        }
+
+        /* Systray */
+        #tray > .passive {
+          -gtk-icon-effect: dim;
+        }
+
+        #tray > .needs-attention {
+          -gtk-icon-effect: highlight;
+          background: ${color.red};
+        }
+
+        /* Hover effects */
+        #workspaces button:hover,
+        #idle_inhibitor:hover,
+        #idle_inhibitor.deactivated:hover,
+        #clock:hover {
+          background: lighter(${color.black3});
+        }
+
+        #workspaces button.urgent:hover {
+          background: lighter(${color.red});
+        }
+
+        #workspaces button.active:hover,
+        #network.icon:hover,
+        #wireplumber.icon:hover,
+        #custom-exit:hover,
+        #custom-lock:hover,
+        #custom-suspend:hover,
+        #custom-reboot:hover,
+        #custom-power:hover {
+          background: lighter(${color.blue});
+        }
+
+        #workspaces button.urgent:hover label,
+        #workspaces button.active:hover label,
+        #network.icon:hover label,
+        #wireplumber.icon:hover label,
+        #custom-exit:hover label,
+        #custom-lock:hover label,
+        #custom-suspend:hover label,
+        #custom-reboot:hover label,
+        #custom-power:hover label {
+          color: lighter(${color.black3});
+        }
+
+        #workspaces button:hover label {
+          color: lighter(${color.white});
+        }
+
+        #workspaces button.empty:hover label {
+          color: lighter(${color.gray0});
+        }
+
+        #idle_inhibitor:hover {
+          color: lighter(${color.blue});
+        }
+
+        #idle_inhibitor.deactivated:hover {
+          color: lighter(${color.gray0});
+        }
+        /* Center modules */
+    .modules-center {
+      padding: 0 0.25rem;
     }
 
-    /* Menu */
-    menu {
-      background: ${color.black0};
-      border-radius: 12px;
-    }
-
-    menu separator {
-      background: ${color.black3};
-    }
-
-    menu menuitem {
-      background: transparent;
-      padding: 0.5rem;
-      transition: 300ms linear;
-    }
-
-    menu menuitem:hover {
-      background: lighter(${color.black3});
-    }
-
-    menu menuitem:first-child {
-      border-radius: 12px 12px 0 0;
-    }
-
-    menu menuitem:last-child {
-      border-radius: 0 0 12px 12px;
-    }
-
-    menu menuitem:only-child {
-      border-radius: 12px;
-    }
-
-    /* Tooltip */
-    tooltip {
-      background: ${color.black0};
-      border-radius: 12px;
-    }
-
-    tooltip label {
-      margin: 0.5rem;
-    }
-
-    /* Waybar */
-    window#waybar {
-      background: ${color.black0};
-    }
-
-    .modules-left {
-      padding-left: 0.25rem;
-    }
-
-    .modules-right {
-      padding-right: 0.25rem;
-    }
-
-    /* Modules */
-    #workspaces,
-    #workspaces button,
-    #idle_inhibitor,
-    #network-modules,
-    #wireplumber-modules,
-    #backlight-modules,
-    #battery-modules,
-    #tray,
-    #clock,
-    #custom-exit,
-    #custom-lock,
-    #custom-suspend,
-    #custom-reboot,
-    #custom-power {
+    /* Clock modules */
+    #clock-time,
+    #clock-week,
+    #clock-month,
+    #clock-calendar {
       background: ${color.black3};
       border-radius: 8px;
       margin: 0.5rem 0.25rem;
+      padding: 0.25rem 0.75rem;
       transition: 300ms linear;
     }
 
-    #image,
-    #window,
-    #network.address,
-    #wireplumber.volume,
-    #backlight.percent,
-    #battery.capacity,
-    #tray,
-    #clock {
+    /* Separators */
+    #custom-separator,
+    #custom-separator-dot {
+      background: ${color.black3};
+      border-radius: 8px;
+      margin: 0.5rem 0.25rem;
       padding: 0.25rem 0.75rem;
     }
 
-    #idle_inhibitor,
-    #network.icon,
-    #wireplumber.icon,
-    #backlight.icon,
-    #battery.icon,
-    #custom-exit,
-    #custom-lock,
-    #custom-suspend,
-    #custom-reboot,
-    #custom-power {
-      background: ${color.blue};
-      color: ${color.black3};
-      border-radius: 8px;
-      font-size: 13pt;
-      padding: 0.25rem;
-      min-width: 1.5rem;
-      transition: 300ms linear;
-    }
-
-    /* Workspaces */
-    #workspaces button {
-      margin: 0;
-      padding: 0.25rem;
-      min-width: 1.5rem;
-    }
-
-    #workspaces button label {
-      color: ${color.white};
-    }
-
-    #workspaces button.empty label {
-      color: ${color.gray0};
-    }
-
-    #workspaces button.urgent label,
-    #workspaces button.active label {
-      color: ${color.black3};
-    }
-
-    #workspaces button.urgent {
-      background: ${color.red};
-    }
-
-    #workspaces button.active {
-      background: ${color.blue};
-    }
-
-    /* Idle Inhibitor */
-    #idle_inhibitor {
-      background: ${color.black3};
-      color: ${color.blue};
-    }
-
-    #idle_inhibitor.deactivated {
-      color: ${color.gray0};
-    }
-
-    /* Systray */
-    #tray > .passive {
-      -gtk-icon-effect: dim;
-    }
-
-    #tray > .needs-attention {
-      -gtk-icon-effect: highlight;
-      background: ${color.red};
+    /* Calendar tooltip */
+    #clock-calendar tooltip {
+      background: ${color.black0};
+      border-radius: 12px;
+      padding: 0.5rem;
     }
 
     /* Hover effects */
-    #workspaces button:hover,
-    #idle_inhibitor:hover,
-    #idle_inhibitor.deactivated:hover,
-    #clock:hover {
+    #clock-time:hover,
+    #clock-week:hover,
+    #clock-month:hover,
+    #clock-calendar:hover {
       background: lighter(${color.black3});
-    }
-
-    #workspaces button.urgent:hover {
-      background: lighter(${color.red});
-    }
-
-    #workspaces button.active:hover,
-    #network.icon:hover,
-    #wireplumber.icon:hover,
-    #custom-exit:hover,
-    #custom-lock:hover,
-    #custom-suspend:hover,
-    #custom-reboot:hover,
-    #custom-power:hover {
-      background: lighter(${color.blue});
-    }
-
-    #workspaces button.urgent:hover label,
-    #workspaces button.active:hover label,
-    #network.icon:hover label,
-    #wireplumber.icon:hover label,
-    #custom-exit:hover label,
-    #custom-lock:hover label,
-    #custom-suspend:hover label,
-    #custom-reboot:hover label,
-    #custom-power:hover label {
-      color: lighter(${color.black3});
-    }
-
-    #workspaces button:hover label {
-      color: lighter(${color.white});
-    }
-
-    #workspaces button.empty:hover label {
-      color: lighter(${color.gray0});
-    }
-
-    #idle_inhibitor:hover {
-      color: lighter(${color.blue});
-    }
-
-    #idle_inhibitor.deactivated:hover {
-      color: lighter(${color.gray0});
     }
   '';
 
