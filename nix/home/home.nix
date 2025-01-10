@@ -48,6 +48,7 @@
     poweralertd
     wayland
     cliphist
+    wl-clipboard
     wl-clip-persist
     wf-recorder
      
