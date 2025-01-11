@@ -53,7 +53,7 @@ in
       ];
 
       modules-center = [
-        "clock#time"
+        # "clock#time"
         "custom/separator"
         "clock#week"
         "custom/separator_dot"
@@ -550,45 +550,5 @@ in
           color: lighter(${color.gray0});
         }
         /* Center modules */
-    .modules-center {
-      padding: 0 0.25rem;
-    }
-
-    /* Clock modules */
-    #clock-time,
-    #clock-week,
-    #clock-month,
-    #clock-calendar {
-      background: ${color.black3};
-      border-radius: 8px;
-      margin: 0.5rem 0.25rem;
-      padding: 0.25rem 0.75rem;
-      transition: 300ms linear;
-    }
-
-    /* Separators */
-    #custom-separator,
-    #custom-separator-dot {
-      background: ${color.black3};
-      border-radius: 8px;
-      margin: 0.5rem 0.25rem;
-      padding: 0.25rem 0.75rem;
-    }
-
-    /* Calendar tooltip */
-    #clock-calendar tooltip {
-      background: ${color.black0};
-      border-radius: 12px;
-      padding: 0.5rem;
-    }
-
-    /* Hover effects */
-    #clock-time:hover,
-    #clock-week:hover,
-    #clock-month:hover,
-    #clock-calendar:hover {
-      background: lighter(${color.black3});
-    }
-  '';
-
+       '';
 }
