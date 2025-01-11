@@ -147,6 +147,7 @@
     ./ghostty.nix
     #  ./wayland.nix
     ./hyprlock.nix
+    ./nemo.nix
     ./rofi.nix
     ./swaync.nix
     ./swayosd.nix
