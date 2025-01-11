@@ -150,6 +150,7 @@
     ./rofi.nix
     ./swaync.nix
     ./swayosd.nix
+    ./waypaper.nix
   ];
 
   wayland.windowManager = {

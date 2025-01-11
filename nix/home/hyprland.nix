@@ -17,7 +17,7 @@
       "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT DESKTOP"
 
-      "swww-daemon &"
+      "swww-daemon & sleep 0.1 & swww img ~/Pictures/wallpaper/114192451_p0.jpg &"
       "nm-applet &"
       "poweralertd &"
       "waybar &"
