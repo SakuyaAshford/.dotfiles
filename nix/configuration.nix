@@ -22,12 +22,10 @@
     ./core/xserver.nix
   ];
 
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-
 
   # Set your time zone.
   time.timeZone = "Asia/Jakarta";
