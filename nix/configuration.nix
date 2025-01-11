@@ -13,16 +13,14 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./core/bootloader.nix
     ./core/font.nix
     ./core/network.nix
     ./core/security.nix
     ./core/service.nix
     ./core/sound.nix
+    ./core/xserver.nix
   ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
 
   nix.settings.experimental-features = [
@@ -38,10 +36,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sakuya = {
