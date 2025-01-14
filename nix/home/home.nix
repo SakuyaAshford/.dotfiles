@@ -151,6 +151,7 @@
     ./hyprlock.nix
     ./nemo.nix
     ./rofi.nix
+    ./spicetify.nix
     ./swaync.nix
     ./swayosd.nix
     ./waypaper.nix
