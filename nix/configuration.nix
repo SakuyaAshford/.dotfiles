@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
     ./core/app/syncthing.nix
     ./core/bootloader.nix
+    ./core/bluetooth.nix
     ./core/font.nix
     ./core/network.nix
     ./core/security.nix

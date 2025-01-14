@@ -62,6 +62,7 @@
     evince # pdf
     libreoffice
     obs-studio
+    # obsidian
 
     inputs.zen-browser.packages."${system}".default
 
