@@ -63,6 +63,7 @@
     libreoffice
     obs-studio
     # obsidian
+    zotero_7
 
     inputs.zen-browser.packages."${system}".default
 
