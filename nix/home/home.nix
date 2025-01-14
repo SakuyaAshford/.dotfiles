@@ -145,6 +145,7 @@
 
   };
   imports = [
+    ./bluez.nix
     ./ghostty.nix
     #  ./wayland.nix
     ./hyprlock.nix
