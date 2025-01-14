@@ -13,6 +13,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./core/app/syncthing.nix
     ./core/bootloader.nix
     ./core/font.nix
     ./core/network.nix

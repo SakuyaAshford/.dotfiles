@@ -18,10 +18,15 @@
         22
         80
         443
+	8384
+	22000 # Syncthing
         # 59010
         # 59011
       ];
       allowedUDPPorts = [
+	# https://docs.syncthing.net/users/firewall.html
+	22000
+	21207
         # 59010
         # 59011
       ];
