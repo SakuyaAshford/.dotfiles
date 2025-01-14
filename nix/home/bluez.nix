@@ -1,9 +1,11 @@
 { pkgs, ... }:
 {
-  home.packages = (with pkgs; [
-    bluez
-    bluez-tools
-  ]);
-
+  home.packages = (
+    with pkgs;
+    [
+      bluez
+      bluez-tools
+    ]
+  );
 
 }

@@ -25,4 +25,3 @@
     use_xdg_state = False
   '';
 }
-

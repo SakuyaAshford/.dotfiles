@@ -1,11 +1,10 @@
 { ... }:
 {
   services.syncthing = {
-    enable = true; 
+    enable = true;
     dataDir = "/home/sakuya/Documents";
     configDir = "/home/sakuya/.config/syncthing";
     user = "sakuya";
     group = "users";
   };
 }
-
