@@ -121,8 +121,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.kitty.enable = true;
-  # wayland.windowManager.hyprland.enable = true;
 
   programs = {
     fzf = import ./fzf.nix { inherit pkgs; };
