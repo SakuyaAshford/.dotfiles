@@ -5,7 +5,7 @@
 {
   enable = true;
   xwayland = {
-    enable = true;
+    enable = true; # enabled for screen sharing
   };
   systemd.enable = true;
   settings = {
@@ -198,6 +198,10 @@
 
   extraConfig = "
     monitor = eDP-1, 1920x1080@60, 0x0, 1
+
+    monitor = HDMI-A-1, 1920x1080@60, 1920x0, 1
+    monitor=DP-1,1920x1080,0x0,1
+
     xwayland {
       force_zero_scaling = true
     }

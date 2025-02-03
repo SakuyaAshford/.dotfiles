@@ -86,6 +86,9 @@
     wget
     zsh
 
+    # OS 
+    ntfs3g
+    exfat
     # System
     brightnessctl
     # 'Desktop'
