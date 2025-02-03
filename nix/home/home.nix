@@ -60,7 +60,9 @@
 
     # Apps
     evince # pdf
+    imv # image viewer
     libreoffice
+    mpv # video player
     obs-studio
     # obsidian
     zotero_7
@@ -70,6 +72,7 @@
     # Utility
     # nixfmt-rfc-style
     # treefmt2
+    xdg-utils
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -155,6 +158,8 @@
     ./swaync.nix
     ./swayosd.nix
     ./waypaper.nix
+    ./xdg-mimes.nix
+    ./yazi.nix
   ];
 
   wayland.windowManager = {

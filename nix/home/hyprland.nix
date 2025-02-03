@@ -40,7 +40,11 @@
     bind = [
       "$mod, Q, exec, ghostty"
       "$mod, D, exec, rofi -show drun"
+
+      # Explorer
       "$mod, E, exec, nemo"
+      "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
+      "$mod SHIFT, E, exec, hyprctl dispatch exec '[float; size 1111 700] ghostty -e yazi'"
 
       "$mod, Escape, exec, swaylock"
       "ALT, Escape, exec, hyprlock"
