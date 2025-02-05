@@ -60,11 +60,12 @@
 
     # Apps
     evince # pdf
+    flameshot # screenshoot
     imv # image viewer
     libreoffice
     mpv # video player
     obs-studio
-    # obsidian
+    obsidian
     zotero_7
 
     inputs.zen-browser.packages."${system}".default
@@ -127,7 +128,6 @@
 
   programs = {
     fzf = import ./fzf.nix { inherit pkgs; };
-    neovim = import ./neovim.nix { inherit config pkgs; };
     oh-my-posh = import ./oh-my-posh.nix { inherit pkgs;};
     zsh = import ./zsh.nix { inherit config pkgs lib; };
     git = import ./git.nix { inherit config pkgs; };
@@ -153,6 +153,7 @@
     #  ./wayland.nix
     ./hyprlock.nix
     ./nemo.nix
+    ./neovim.nix
     ./rofi.nix
     ./spicetify.nix
     ./swaync.nix

@@ -87,15 +87,20 @@
     zsh
 
     # OS 
-    ntfs3g
-    exfat
+    ntfs3g   # NTFS
+    exfat    # exFAT
+
     # System
+    gvfs
+    udisks2  # Automounting
+
     brightnessctl
     # 'Desktop'
     # networkmanagerapplet
   ];
 
   home-manager = {
+    useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
       "sakuya" = import ./home/home.nix;
@@ -111,7 +116,7 @@
   # };
 
   # List services that you want to enable:
-
+  services.udisks2.enable = true;
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 

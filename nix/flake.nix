@@ -19,6 +19,10 @@
       submodules = true;
     };
 
+    nvf = {
+      url = "github:notashelf/nvf";
+    };
+
     spicetify-nix = {
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
