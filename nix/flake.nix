@@ -19,6 +19,14 @@
       submodules = true;
     };
 
+    hypr-contrib = {
+      url = "github:hyprwm/contrib";
+    };
+
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+    }; 
+
     nvf = {
       url = "github:notashelf/nvf";
     };

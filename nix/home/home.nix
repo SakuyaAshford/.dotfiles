@@ -50,6 +50,10 @@
     onefetch
 
     # hyprland
+    inputs.hypr-contrib.packages.${pkgs.system}.grimblast # screenshot
+    grim 
+    hyprpicker
+    swappy # snapshot editing tool
     swww
     poweralertd
     wayland
@@ -161,9 +165,11 @@
     ./waypaper.nix
     ./xdg-mimes.nix
     ./yazi.nix
+
+    ./script.nix
   ];
 
   wayland.windowManager = {
-    hyprland = (import ./hyprland.nix { inherit pkgs; });
+    hyprland = (import ./hyprland.nix { inherit inputs pkgs; });
   };
 }

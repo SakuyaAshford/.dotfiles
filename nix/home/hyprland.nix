@@ -1,9 +1,12 @@
 {
+  inputs,
   pkgs,
   ...
 }:
 {
   enable = true;
+  package = inputs.hyprland.packages.${pkgs.system}.default;
+  portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   xwayland = {
     enable = true; # enabled for screen sharing
   };
@@ -17,7 +20,7 @@
       border_size = 2;
       "col.active_border" = "rgb(98971A) rgb(CC241D) 45deg";
       "col.inactive_border" = "0x00000000";
-      border_part_of_window = false;
+      # border_part_of_window = false;
       no_border_on_floating = false;
     };
 
@@ -40,6 +43,12 @@
     bind = [
       "$mod, Q, exec, ghostty"
       "$mod, D, exec, rofi -show drun"
+
+      # Utlity
+      # screenshot
+      ",Print, exec, screenshot --copy"
+      "$mod, Print, exec, screenshot --save"
+      "$mod SHIFT, Print, exec, screenshot --swappy"
 
       # Explorer
       "$mod, E, exec, nemo"
@@ -65,7 +74,7 @@
       "$mod SHIFT, 1, movetoworkspacesilent, 1" # movetoworkspacesilent
       "$mod SHIFT, 2, movetoworkspacesilent, 2"
       "$mod SHIFT, 3, movetoworkspacesilent, 3"
-      "$mod SHIFT, 4, movetoworkspacesilent, 4"
+      "$mod SHIFT, 4, movetoworkspacesilent, 4" 
       "$mod SHIFT, 5, movetoworkspacesilent, 5"
       "$mod SHIFT, 6, movetoworkspacesilent, 6"
       "$mod SHIFT, 7, movetoworkspacesilent, 7"
