@@ -1,6 +1,9 @@
-{ pkgs, inputs, ... }:
 {
-  imports = [ inputs.nvf.homeManagerModules.default ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [inputs.nvf.homeManagerModules.default];
 
   programs.neovim = {
     enable = true;
@@ -8,13 +11,12 @@
     vimAlias = true;
   };
   programs.nvf = {
-    enable = false;
-
+    enable = true;
+    enableManpages = true;
     settings.vim = {
-
       vimAlias = true;
       viAlias = true;
-       
+
       theme = {
         enable = true;
         name = "catppuccin";
@@ -46,7 +48,7 @@
 
         nix.enable = true;
         python.enable = true;
-	rust.enable = true;
+        rust.enable = true;
       };
 
       visuals = {
