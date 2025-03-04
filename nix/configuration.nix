@@ -12,7 +12,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./host/laptop/hardware-configuration.nix
     ./core/app/syncthing.nix
     ./core/bootloader.nix
     ./core/bluetooth.nix
@@ -21,6 +21,7 @@
     ./core/security.nix
     ./core/service.nix
     ./core/sound.nix
+    ./core/user.nix
     ./core/xserver.nix
   ];
 
@@ -35,19 +36,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Configure keymap in X11
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.sakuya = {
-    isNormalUser = true;
-    description = "sakuya";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    shell = pkgs.zsh;
-    packages = with pkgs; [ ];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
