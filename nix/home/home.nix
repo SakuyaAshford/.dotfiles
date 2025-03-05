@@ -4,42 +4,11 @@
   pkgs,
   lib,
   ...
-}:
-
-{
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "sakuya";
-  home.homeDirectory = "/home/sakuya";
-
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
+}: let
+  # homeDirectory = "/home/${username}";
+  # dotfilesPath = "${homeDirectory}/.dotfiles";
+in {
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
     # CLI
     bat
     bottom
@@ -51,7 +20,7 @@
 
     # hyprland
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast # screenshot
-    grim 
+    grim
     hyprpicker
     swappy # snapshot editing tool
     swww
@@ -131,15 +100,15 @@
   programs.home-manager.enable = true;
 
   programs = {
-    fzf = import ./fzf.nix { inherit pkgs; };
-    oh-my-posh = import ./oh-my-posh.nix { inherit pkgs;};
-    zsh = import ./zsh.nix { inherit config pkgs lib; };
-    git = import ./git.nix { inherit config pkgs; };
-    zoxide = import ./zoxide.nix { inherit pkgs; };
+    fzf = import ./fzf.nix {inherit pkgs;};
+    oh-my-posh = import ./oh-my-posh.nix {inherit pkgs;};
+    zsh = import ./zsh.nix {inherit config pkgs lib;};
+    git = import ./git.nix {inherit config pkgs;};
+    zoxide = import ./zoxide.nix {inherit pkgs;};
     # pipewire = import ./pipewire.nix { inherit pkgs; };
 
     # ghostty = import ./ghostty.nix { inherit inputs pkgs; };
-    waybar = import ./waybar.nix { inherit config pkgs; };
+    waybar = import ./waybar.nix {inherit config pkgs;};
     swaylock = import ./swaylock.nix {
       inherit
         config
@@ -149,7 +118,6 @@
         ;
     };
     # swaync = import ./swaync.nix { inherit pkgs; };
-
   };
   imports = [
     ./bluez.nix
@@ -170,6 +138,6 @@
   ];
 
   wayland.windowManager = {
-    hyprland = (import ./hyprland.nix { inherit inputs pkgs; });
+    hyprland = import ./hyprland.nix {inherit inputs pkgs;};
   };
 }
