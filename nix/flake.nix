@@ -25,7 +25,7 @@
 
     hyprpicker = {
       url = "github:hyprwm/hyprpicker";
-    }; 
+    };
 
     nvf = {
       url = "github:notashelf/nvf";
@@ -49,7 +49,6 @@
       url = "github:yazi-rs/plugins";
       flake = false;
     };
-
   };
 
   outputs =
@@ -68,10 +67,13 @@
       };
       lib = nixpkgs.lib;
 
-
       treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
     in
     {
+      formatter.${system} = treefmtEval.config.build.wrapper;
+      checks.${system} = {
+        formatting = treefmtEval.config.build.check self;
+      };
       nixosConfigurations = {
         # desktop = nixpkgs.lib.nixosSystem {
         #   inherit system;
@@ -97,7 +99,6 @@
         #     inherit self inputs username;
         #   };
         # };
-
       };
     };
 }

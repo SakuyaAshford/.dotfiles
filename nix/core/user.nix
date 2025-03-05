@@ -16,7 +16,7 @@
         # if (host == "desktop") then
         #  [ ./../home/default.desktop.nix ]
         #else
-          [ ./../home/home.nix ];
+        [ ./../home/home.nix ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "24.11";
@@ -35,4 +35,3 @@
   };
   nix.settings.allowed-users = [ "${username}" ];
 }
-

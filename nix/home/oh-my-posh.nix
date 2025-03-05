@@ -1,6 +1,8 @@
-{...}: {
+{ ... }:
+{
   enable = true;
   enableZshIntegration = true;
-  settings = builtins.fromTOML (builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh.toml));
+  settings = builtins.fromTOML (
+    builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh.toml)
+  );
 }
-

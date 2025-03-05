@@ -6,7 +6,11 @@
 
     settings = {
       manager = {
-        ratio = [ 1 4 3 ];
+        ratio = [
+          1
+          4
+          3
+        ];
         sort_by = "alphabetical";
         sort_sensitive = false;
         sort_reverse = false;
@@ -15,7 +19,10 @@
         show_hidden = false;
         show_symlink = true;
         scrolloff = 5;
-        mouse_events = [ "click" "scroll" ];
+        mouse_events = [
+          "click"
+          "scroll"
+        ];
         title_format = "Yazi: {cwd}";
       };
 
@@ -29,44 +36,109 @@
         image_quality = 75;
         sixel_fraction = 15;
         ueberzug_scale = 1;
-        ueberzug_offset = [ 0 0 0 0 ];
+        ueberzug_offset = [
+          0
+          0
+          0
+          0
+        ];
       };
 
       opener = {
         edit = [
-          { run = ''${"$"}EDITOR:-vi "$@"''; desc = "$EDITOR"; block = true; for = "unix"; }
+          {
+            run = ''${"$"}EDITOR:-vi "$@"'';
+            desc = "$EDITOR";
+            block = true;
+            for = "unix";
+          }
         ];
         open = [
-          { run = "xdg-open \"$1\""; desc = "Open"; for = "linux"; }
+          {
+            run = "xdg-open \"$1\"";
+            desc = "Open";
+            for = "linux";
+          }
         ];
         reveal = [
-          { run = "xdg-open \"$(dirname \"$1\")\""; desc = "Reveal"; for = "linux"; }
+          {
+            run = "xdg-open \"$(dirname \"$1\")\"";
+            desc = "Reveal";
+            for = "linux";
+          }
         ];
         play = [
-          { run = "mpv --force-window \"$@\""; orphan = true; for = "unix"; }
+          {
+            run = "mpv --force-window \"$@\"";
+            orphan = true;
+            for = "unix";
+          }
         ];
         image = [
-          { run = "imv \"$@\""; desc = "Open with imv"; }
+          {
+            run = "imv \"$@\"";
+            desc = "Open with imv";
+          }
         ];
         pdf = [
-          { run = "zathura \"$@\""; desc = "Open with zathura"; }
+          {
+            run = "zathura \"$@\"";
+            desc = "Open with zathura";
+          }
         ];
       };
 
       open.rules = [
-        { name = "*/"; use = [ "edit" "open" "reveal" ]; }
-        { mime = "text/*"; use = [ "edit" "reveal" ]; }
-        { mime = "image/*"; use = [ "image" "reveal" ]; }
-        { mime = "application/pdf"; use = [ "pdf" "reveal" ]; }
-        { mime = "{audio,video}/*"; use = [ "play" "reveal" ]; }
-        { name = "*"; use = [ "open" "reveal" ]; }
+        {
+          name = "*/";
+          use = [
+            "edit"
+            "open"
+            "reveal"
+          ];
+        }
+        {
+          mime = "text/*";
+          use = [
+            "edit"
+            "reveal"
+          ];
+        }
+        {
+          mime = "image/*";
+          use = [
+            "image"
+            "reveal"
+          ];
+        }
+        {
+          mime = "application/pdf";
+          use = [
+            "pdf"
+            "reveal"
+          ];
+        }
+        {
+          mime = "{audio,video}/*";
+          use = [
+            "play"
+            "reveal"
+          ];
+        }
+        {
+          name = "*";
+          use = [
+            "open"
+            "reveal"
+          ];
+        }
       ];
 
       tasks = {
         micro_workers = 10;
         macro_workers = 25;
         bizarre_retry = 5;
-        image_alloc = 536870912;  # 512MB
+        image_alloc = 536870912; # 512MB
         suppress_preload = false;
       };
 
@@ -75,12 +147,22 @@
         cd = {
           title = "Change directory:";
           origin = "top-center";
-          offset = [ 0 2 50 3 ];
+          offset = [
+            0
+            2
+            50
+            3
+          ];
         };
         rename = {
           title = "Rename:";
           origin = "hovered";
-          offset = [ 0 1 50 3 ];
+          offset = [
+            0
+            1
+            50
+            3
+          ];
         };
       };
 
@@ -88,12 +170,22 @@
         trash = {
           title = "Trash {n} selected file{s}?";
           origin = "center";
-          offset = [ 0 0 70 20 ];
+          offset = [
+            0
+            0
+            70
+            20
+          ];
         };
         delete = {
           title = "Permanently delete {n} selected file{s}?";
           origin = "center";
-          offset = [ 0 0 70 20 ];
+          offset = [
+            0
+            0
+            70
+            20
+          ];
         };
       };
 

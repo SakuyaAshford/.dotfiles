@@ -74,7 +74,7 @@
       "$mod SHIFT, 1, movetoworkspacesilent, 1" # movetoworkspacesilent
       "$mod SHIFT, 2, movetoworkspacesilent, 2"
       "$mod SHIFT, 3, movetoworkspacesilent, 3"
-      "$mod SHIFT, 4, movetoworkspacesilent, 4" 
+      "$mod SHIFT, 4, movetoworkspacesilent, 4"
       "$mod SHIFT, 5, movetoworkspacesilent, 5"
       "$mod SHIFT, 6, movetoworkspacesilent, 6"
       "$mod SHIFT, 7, movetoworkspacesilent, 7"

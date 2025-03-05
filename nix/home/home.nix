@@ -4,10 +4,8 @@
   pkgs,
   lib,
   ...
-}: let
-  # homeDirectory = "/home/${username}";
-  # dotfilesPath = "${homeDirectory}/.dotfiles";
-in {
+}:
+{
   home.packages = with pkgs; [
     # CLI
     bat
@@ -100,15 +98,15 @@ in {
   programs.home-manager.enable = true;
 
   programs = {
-    fzf = import ./fzf.nix {inherit pkgs;};
-    oh-my-posh = import ./oh-my-posh.nix {inherit pkgs;};
-    zsh = import ./zsh.nix {inherit config pkgs lib;};
-    git = import ./git.nix {inherit config pkgs;};
-    zoxide = import ./zoxide.nix {inherit pkgs;};
+    fzf = import ./fzf.nix { inherit pkgs; };
+    oh-my-posh = import ./oh-my-posh.nix { inherit pkgs; };
+    zsh = import ./zsh.nix { inherit config pkgs lib; };
+    git = import ./git.nix { inherit config pkgs; };
+    zoxide = import ./zoxide.nix { inherit pkgs; };
     # pipewire = import ./pipewire.nix { inherit pkgs; };
 
     # ghostty = import ./ghostty.nix { inherit inputs pkgs; };
-    waybar = import ./waybar.nix {inherit config pkgs;};
+    waybar = import ./waybar.nix { inherit config pkgs; };
     swaylock = import ./swaylock.nix {
       inherit
         config
@@ -138,6 +136,6 @@ in {
   ];
 
   wayland.windowManager = {
-    hyprland = import ./hyprland.nix {inherit inputs pkgs;};
+    hyprland = import ./hyprland.nix { inherit inputs pkgs; };
   };
 }

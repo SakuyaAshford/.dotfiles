@@ -37,19 +37,18 @@
     wget
     zsh
 
-    # OS 
-    ntfs3g   # NTFS
-    exfat    # exFAT
+    # OS
+    ntfs3g # NTFS
+    exfat # exFAT
 
     # System
     gvfs
-    udisks2  # Automounting
+    udisks2 # Automounting
 
     brightnessctl
     # 'Desktop'
     # networkmanagerapplet
   ];
-
 
   services.udisks2.enable = true;
 
