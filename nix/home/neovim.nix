@@ -2,9 +2,8 @@
   pkgs,
   inputs,
   ...
-}:
-{
-  imports = [ inputs.nvf.homeManagerModules.default ];
+}: {
+  imports = [inputs.nvf.homeManagerModules.default];
 
   programs.neovim = {
     enable = true;
@@ -12,7 +11,7 @@
     vimAlias = true;
   };
   programs.nvf = {
-    enable = true;
+    enable = false;
     enableManpages = true;
     settings.vim = {
       vimAlias = true;
