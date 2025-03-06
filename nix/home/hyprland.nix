@@ -41,6 +41,7 @@
     ];
 
     bind = [
+
       "$mod, Q, exec, ghostty"
       "$mod, D, exec, rofi -show drun"
 
@@ -214,5 +215,7 @@
     xwayland {
       force_zero_scaling = true
     }
+
+    bindl=,switch:Lid Switch,exec,systemctl suspend
   ";
 }

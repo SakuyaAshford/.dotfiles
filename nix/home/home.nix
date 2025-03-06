@@ -3,8 +3,12 @@
   config,
   pkgs,
   lib,
+  username,
   ...
 }:
+let
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+in
 {
   home.packages = with pkgs; [
     # CLI
@@ -138,4 +142,5 @@
   wayland.windowManager = {
     hyprland = import ./hyprland.nix { inherit inputs pkgs; };
   };
+
 }

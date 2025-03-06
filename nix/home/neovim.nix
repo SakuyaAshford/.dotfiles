@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   inputs,
   ...
@@ -10,6 +11,11 @@
     viAlias = true;
     vimAlias = true;
   };
+
+  xdg.configFile."nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "/home/sakuya/.dotfiles/.config/nvim";
+
+
   programs.nvf = {
     enable = false;
     enableManpages = true;
