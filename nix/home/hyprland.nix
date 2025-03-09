@@ -59,6 +59,25 @@
       "$mod, Escape, exec, swaylock"
       "ALT, Escape, exec, hyprlock"
 
+      # switch focus
+      "$mod, left,  movefocus, l"
+      "$mod, right, movefocus, r"
+      "$mod, up,    movefocus, u"
+      "$mod, down,  movefocus, d"
+      "$mod, h, movefocus, l"
+      "$mod, j, movefocus, d"
+      "$mod, k, movefocus, u"
+      "$mod, l, movefocus, r"
+
+      "$mod, left,  alterzorder, top"
+      "$mod, right, alterzorder, top"
+      "$mod, up,    alterzorder, top"
+      "$mod, down,  alterzorder, top"
+      "$mod, h, alterzorder, top"
+      "$mod, j, alterzorder, top"
+      "$mod, k, alterzorder, top"
+      "$mod, l, alterzorder, top"
+
       # switch workspace
       "$mod, 1, workspace, 1"
       "$mod, 2, workspace, 2"
