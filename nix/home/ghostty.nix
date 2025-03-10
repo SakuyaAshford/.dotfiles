@@ -1,4 +1,5 @@
 {
+  config, 
   inputs,
   pkgs,
   ...
@@ -8,4 +9,7 @@ let
 in
 {
   home.packages = (with pkgs; [ ghostty ]);
+  xdg.configFile."ghostty".source =
+    config.lib.file.mkOutOfStoreSymlink "/home/sakuya/.dotfiles/.config/ghostty";
+
 }

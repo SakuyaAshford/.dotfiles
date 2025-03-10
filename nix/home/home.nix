@@ -110,7 +110,7 @@ in
     # pipewire = import ./pipewire.nix { inherit pkgs; };
 
     # ghostty = import ./ghostty.nix { inherit inputs pkgs; };
-    waybar = import ./waybar.nix { inherit config pkgs; };
+    # waybar = import ./waybar.nix { inherit config pkgs; };
     swaylock = import ./swaylock.nix {
       inherit
         config
@@ -132,6 +132,7 @@ in
     ./spicetify.nix
     ./swaync.nix
     ./swayosd.nix
+    ./waybar.nix
     ./waypaper.nix
     ./xdg-mimes.nix
     ./yazi.nix
