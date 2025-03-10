@@ -11,28 +11,22 @@
   ],
   "modules-right": [
     "temperature#gpu",
-    "custom/transparency",
-    "custom/wallpaper",
+    // "custom/transparency",
+    // "custom/wallpaper",
+    "bluetooth",
     "pulseaudio",
     "backlight",
     "network",
     // "bluetooth",
     "battery"
   ],
+
   "temperature#gpu": {
     "thermal-zone": 5,
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
     "format": "{temperatureC}°C ",
     "tooltip": false
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "scroll-step": 5,
-    "format": "{icon}",
-    "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "],
-    "tooltip": true,
-    "tooltip-format": "{percent}%"
   },
   "network#speed": {
     "interval": 1,
@@ -117,15 +111,15 @@
     "tooltip": false
   },
   "network": {
-    "format-wifi": " {icon}",
+    "format-wifi": " {icon} {signalStrength}%",
     "format-ethernet": "󰈀",
     "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
     "format-disconnected": "󰪎",
     "interval": 5,
+    "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}",
     "tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "exec ~/.config/rofi/wifi/wifi.sh",
-    "on-click-right": "ghostty -e nmtui"
+    "on-click": "nm-connection-editor"
   },
   "battery": {
     "states": {
@@ -140,15 +134,39 @@
     "tooltip-format": "{capacity}%, about {time} left",
     "format-icons": [" ", " ", " ", " "]
   },
+  "bluetooth": {
+     "format": "{icon}",
+     "format-disabled": "",
+     "format-off": "",
+     "interval": 30,
+     "on-click": "blueman-manager",
+     "tooltip": false
+  },
   "pulseaudio": {
-    "format": "<span font='Font Awesome 5 Free'>{icon}</span>",
-    "format-muted": "<span font='Font Awesome 5 Free'>\uf6a9</span>",
+    "format": "{icon} {volume}%",
+    "format-muted": "  {volume}%",
     "format-icons": {
-      "headphone": "\uf025",
-      "default": ["\uf028"]
+      "default": [" "]
     },
-    "tooltip-format": "{volume}% {desc}",
+    "scroll-step": 5,
     "on-click": "pamixer -t"
+  },
+  // "pulseaudio": {
+  //   "format": "<span font='Font Awesome 5 Free'>{icon}</span>",
+  //   "format-muted": "<span font='Font Awesome 5 Free'>\uf6a9</span>",
+  //   "format-icons": {
+  //     "headphone": "\uf025",
+  //     "default": ["\uf028"]
+  //   },
+  //   "tooltip-format": "{volume}% {desc}",
+  //   "on-click": "pamixer -t"
+  // },
+  "backlight": {
+    "device": "intel_backlight",
+    "scroll-step": 5,
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "],
+    "tooltip": true,
   },
   "bluetooth": {
     "format": "{icon}",

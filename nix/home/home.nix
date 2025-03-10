@@ -17,6 +17,7 @@ in
     disfetch
     eza # ls replacement
     fd # find replacement
+    pamixer # pulseaudio cli mixer
     ripgrep # grep replacement
     onefetch
 
@@ -48,7 +49,14 @@ in
     # Utility
     # nixfmt-rfc-style
     # treefmt2
+    unzip
     xdg-utils
+     
+    # bluetooth
+    blueman
+    bluez
+    bluez-tools
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -122,7 +130,6 @@ in
     # swaync = import ./swaync.nix { inherit pkgs; };
   };
   imports = [
-    ./bluez.nix
     ./ghostty.nix
     #  ./wayland.nix
     ./hyprlock.nix
