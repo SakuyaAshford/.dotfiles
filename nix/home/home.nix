@@ -45,6 +45,16 @@ in
     zotero_7
 
     inputs.zen-browser.packages."${system}".default
+     
+    # Programming Language
+    # C / C++
+    gcc
+    gdb
+    gnumake
+
+    # Python
+    python3
+    python312Packages.ipython
 
     # Utility
     # nixfmt-rfc-style
