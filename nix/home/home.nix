@@ -18,6 +18,7 @@ in
     eza # ls replacement
     fd # find replacement
     pamixer # pulseaudio cli mixer
+    pavucontrol
     ripgrep # grep replacement
     onefetch
 

@@ -149,7 +149,8 @@
       "default": [" "]
     },
     "scroll-step": 5,
-    "on-click": "pamixer -t"
+    "on-click": "pamixer -t",
+    "on-click-right":"pavucontrol",
   },
   // "pulseaudio": {
   //   "format": "<span font='Font Awesome 5 Free'>{icon}</span>",
