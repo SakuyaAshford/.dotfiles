@@ -6,4 +6,5 @@ vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
+vim.opt.conceallevel = 1
 vim.cmd("colorscheme desert")

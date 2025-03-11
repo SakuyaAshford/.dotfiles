@@ -1,4 +1,4 @@
-{ pkgs, config, ... };
+{ pkgs, config, ... }:
 {
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
@@ -24,7 +24,7 @@
             name = "Catppuccin";
             package = pkgs.catppuccin-gtk.override {
                 variant = "mocha";
-                accents = [ "purple" ]; 
+                accents = [ "lavender" ]; 
                 tweaks = [ "rimless" "float" ];
             };
         };
