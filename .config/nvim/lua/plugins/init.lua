@@ -44,6 +44,11 @@ function M.setup()
       "folke/lazy.nvim",
       lazy = false,
     }
+    -- {
+    -- "ThePrimeagen/harpoon",
+    -- branch = "harpoon2",
+    -- dependencies = { "nvim-lua/plenary.nvim" }
+    -- }
   }
 
 
