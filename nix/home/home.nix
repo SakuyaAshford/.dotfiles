@@ -142,6 +142,7 @@ in
   };
   imports = [
     ./ghostty.nix
+    ./gtk.nix
     #  ./wayland.nix
     ./hyprlock.nix
     ./nemo.nix
