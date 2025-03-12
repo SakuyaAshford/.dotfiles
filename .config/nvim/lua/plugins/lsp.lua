@@ -98,6 +98,30 @@ return {
             })
         })
 
+        local ls = require("luasnip")
+        ls.add_snippets("markdown", {
+          ls.snippet("b", {
+            ls.text_node("**"),
+            ls.insert_node(1),
+            ls.text_node("**")
+          }),
+          ls.snippet("i", {
+            ls.text_node("*"),
+            ls.insert_node(1),
+            ls.text_node("*")
+          }),
+          ls.snippet("s", {
+            ls.text_node("~~"),
+            ls.insert_node(1),
+            ls.text_node("~~")
+          }),
+          ls.snippet("c", {
+            ls.text_node("`"),
+            ls.insert_node(1),
+            ls.text_node("`")
+          }),
+        })
+
         vim.diagnostic.config({
             -- update_in_insert = true,
             float = {
