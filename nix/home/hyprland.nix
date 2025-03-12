@@ -15,10 +15,10 @@
     general = {
       "$mod" = "SUPER";
       layout = "dwindle";
-      gaps_in = 5;
-      gaps_out = 10;
+      gaps_in = 0;
+      gaps_out = 0;
       border_size = 2;
-      "col.active_border" = "rgb(98971A) rgb(CC241D) 45deg";
+      "col.active_border" = "rgb(cba6f7) rgb(94e2d5) 45deg"; 
       "col.inactive_border" = "0x00000000";
       # border_part_of_window = false;
       no_border_on_floating = false;
@@ -138,6 +138,78 @@
         natural_scroll = true;
       };
     };
+
+      decoration = {
+        rounding = 0;
+        # active_opacity = 0.90;
+        # inactive_opacity = 0.90;
+        # fullscreen_opacity = 1.0;
+
+        blur = {
+          enabled = true;
+          size = 1;
+          passes = 1;
+          # size = 4;
+          # passes = 2;
+          brightness = 1;
+          contrast = 1.400;
+          ignore_opacity = true;
+          noise = 0;
+          new_optimizations = true;
+          xray = true;
+        };
+
+
+        shadow = {
+            enabled = true; 
+            
+            ignore_window = true;
+            offset = "0 2";
+            range = 20;
+            render_power = 3;
+            color = "rgba(00000055)";
+        };
+      };
+
+      animations = {
+        enabled = true;
+
+        bezier = [
+          "fluent_decel, 0, 0.2, 0.4, 1"
+          "easeOutCirc, 0, 0.55, 0.45, 1"
+          "easeOutCubic, 0.33, 1, 0.68, 1"
+          "easeinoutsine, 0.37, 0, 0.63, 1"
+        ];
+
+        animation = [
+          # Windows
+          "windowsIn, 1, 3, easeOutCubic, popin 30%" # window open
+          "windowsOut, 1, 3, fluent_decel, popin 70%" # window close.
+          "windowsMove, 1, 2, easeinoutsine, slide" # everything in between, moving, dragging, resizing.
+
+          # Fade
+          "fadeIn, 1, 3, easeOutCubic" # fade in (open) -> layers and windows
+          "fadeOut, 1, 2, easeOutCubic" # fade out (close) -> layers and windows
+          "fadeSwitch, 0, 1, easeOutCirc" # fade on changing activewindow and its opacity
+          "fadeShadow, 1, 10, easeOutCirc" # fade on changing activewindow for shadows
+          "fadeDim, 1, 4, fluent_decel" # the easing of the dimming of inactive windows
+          "border, 1, 2.7, easeOutCirc" # for animating the border's color switch speed
+          "borderangle, 1, 30, fluent_decel, once" # for animating the border's gradient angle - styles: once (default), loop
+          "workspaces, 1, 4, easeOutCubic, fade" # styles: slide, slidevert, fade, slidefade, slidefadevert
+        ];
+      };
+
+
+    misc = {
+        disable_autoreload = true;
+        disable_hyprland_logo = true;
+        always_follow_on_dnd = true;
+        layers_hog_keyboard_focus = true;
+        animate_manual_resizes = false;
+        enable_swallow = true;
+        focus_on_activate = true;
+    };
+
     # windowrule
     windowrule = [
       "float,Viewnior"
@@ -169,15 +241,10 @@
       "opacity 1.0 override 1.0 override, class:(Unity)"
       "opacity 1.0 override 1.0 override, class:(zen)"
       "opacity 1.0 override 1.0 override, class:(evince)"
-      "workspace 1, class:^(zen)$"
-      "workspace 3, class:^(evince)$"
-      "workspace 4, class:^(Gimp-2.10)$"
-      "workspace 4, class:^(Aseprite)$"
-      "workspace 5, class:^(Audacious)$"
+      "workspace 1, class:^(ghostty)$"
+      "workspace 2, class:^(zen)$"
+      "workspace 3, class:^(Obsidian)$"
       "workspace 5, class:^(Spotify)$"
-      "workspace 8, class:^(com.obsproject.Studio)$"
-      "workspace 10, class:^(discord)$"
-      "workspace 10, class:^(WebCord)$"
       "idleinhibit focus, class:^(mpv)$"
       "idleinhibit fullscreen, class:^(firefox)$"
       "float,class:^(org.gnome.Calculator)$"

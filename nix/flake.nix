@@ -48,7 +48,7 @@
     yazi-plugins = {
       url = "github:yazi-rs/plugins";
       flake = false;
-  y  };
+    };
   };
 
   outputs =
