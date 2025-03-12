@@ -3,7 +3,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [ inputs.nvf.homeManagerModules.default ];
 
   programs.neovim = {
@@ -20,4 +21,3 @@
     enable = false; # enabling it will change the config to ~/.config/nvf
   };
 }
-

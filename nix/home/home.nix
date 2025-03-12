@@ -6,9 +6,6 @@
   username,
   ...
 }:
-let
-  inherit (config.lib.file) mkOutOfStoreSymlink;
-in
 {
   home.packages = with pkgs; [
     # CLI
@@ -46,7 +43,7 @@ in
     zotero_7
 
     inputs.zen-browser.packages."${system}".default
-     
+
     # Programming Language
     # C / C++
     gcc
@@ -62,7 +59,7 @@ in
     # treefmt2
     unzip
     xdg-utils
-     
+
     # bluetooth
     blueman
     bluez

@@ -5,8 +5,8 @@
 }:
 {
   programs.waybar = {
-  enable = true;
-  }; 
+    enable = true;
+  };
 
   xdg.configFile."waybar".source =
     config.lib.file.mkOutOfStoreSymlink "/home/sakuya/.dotfiles/.config/waybar";
