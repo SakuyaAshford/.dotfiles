@@ -22,6 +22,10 @@ return {
       {
         name = "Akashic Record",
         path = "~/Documents/Obsidian/Akashic Record",
+        disable_frontmatter = true,
+        templates = {
+            folder = "SYSTEM/Template"
+        },
       },
     },
     completion = {
