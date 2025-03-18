@@ -105,13 +105,23 @@
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
+
     GDK_BACKEND = "wayland";
     MOZ_ENABLE_WAYLAND = "1";
 
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
+    WLR_BACKEND = "vulkan";
+    WLR_RENDERER = "vulkan";
     WLR_NO_HARDWARE_CURSORS = "1";
+
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    QT_QPA_PLATFORM = "xcb";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_STYLE_OVERRIDE = "kvantum";
+
     _JAVA_AWT_WM_NOREPARENTING = "1";
+
+    GTK_THEME = "Catppuccin Mocha";
   };
 
   # Let Home Manager install and manage itself.

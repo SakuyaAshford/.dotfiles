@@ -119,7 +119,8 @@
     "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}",
     "tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "nm-connection-editor"
+    "on-click": "nm-applet", 
+    "on-click-right": "nm-connection-editor"
   },
   "battery": {
     "states": {
