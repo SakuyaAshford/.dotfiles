@@ -1,4 +1,9 @@
 return {
     "OXY2DEV/markview.nvim",
-    lazy = false
+    enabled = false,
+    lazy = false,
+    config = function ()
+        require("markview.nvim").setup {
+        }
+    end
 };
