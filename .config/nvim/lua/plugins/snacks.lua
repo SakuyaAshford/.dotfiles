@@ -38,5 +38,19 @@ return {
             },
         },
         notifier = { enabled = true },
+        terminal = { enabled = true },
+        toggle = { enabled = true },
+        zen = { enabled = true }
     },
+    keys = {
+        -- Notified
+        { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
+        { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+        -- Terminal
+        { "<c-/>",      function() Snacks.terminal() end, desc = "Toggle Terminal" },
+        { "<c-_>",      function() Snacks.terminal() end, desc = "which_key_ignore" },
+        -- Zen
+        { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
+        { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
+    }
 }
