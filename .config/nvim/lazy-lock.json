@@ -1,4 +1,5 @@
 {
+  "LazyVim": { "branch": "main", "commit": "ec5981dfb1222c3bf246d9bcaa713d5cfa486fbd" },
   "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
   "bullets.vim": { "branch": "master", "commit": "8f3259e807c40b91d247f612823295ab99777a65" },
   "catppuccin": { "branch": "main", "commit": "5b5e3aef9ad7af84f463d17b5479f06b87d5c429" },
@@ -25,8 +26,10 @@
   "render-markdown.nvim": { "branch": "main", "commit": "125258ac5bccd21651505d78dbd6120906243749" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "telescope.nvim": { "branch": "master", "commit": "a4ed82509cecc56df1c7138920a1aeaf246c0ac5" },
+  "ts-comments.nvim": { "branch": "main", "commit": "1bd9d0ba1d8b336c3db50692ffd0955fe1bb9f0c" },
   "typr": { "branch": "main", "commit": "5ee7b67dc610e8ec2c0c8a6912a8d1fba90160c2" },
   "vim-fugitive": { "branch": "master", "commit": "4a745ea72fa93bb15dd077109afbb3d1809383f2" },
   "volt": { "branch": "main", "commit": "21a2351697abfed26d4469b88d3ab124d55a1b3f" },
+  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
   "zen-mode.nvim": { "branch": "main", "commit": "863f150ca321b3dd8aa1a2b69b5f411a220e144f" }
 }
