@@ -47,7 +47,7 @@
       opener = {
         edit = [
           {
-            run = ''${"$"}EDITOR:-vi "$@"'';
+            run = ''${"$"}EDITOR:-vim "$@"'';
             desc = "$EDITOR";
             block = true;
             for = "unix";

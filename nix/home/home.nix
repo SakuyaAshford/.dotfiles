@@ -120,6 +120,7 @@
     QT_STYLE_OVERRIDE = "kvantum";
 
     _JAVA_AWT_WM_NOREPARENTING = "1";
+    DIRENV_LOG_FORMAT = "";
 
     GTK_THEME = "Catppuccin Mocha";
   };
@@ -158,6 +159,7 @@
     ./spicetify.nix
     ./swaync.nix
     ./swayosd.nix
+    ./tmux.nix
     ./waybar.nix
     ./waypaper.nix
     ./xdg-mimes.nix
