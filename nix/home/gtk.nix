@@ -10,9 +10,9 @@
     nerd-fonts.symbols-only
   ];
   home.pointerCursor = {
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-    size = 24;
+    name = "Nordzy-cursors";
+    package = pkgs.nordzy-cursor-theme;
+    size = 22;
   };
   gtk = {
     enable = true;
@@ -20,25 +20,21 @@
       name = "Maple Mono";
       size = 12;
     };
-    theme = {
-      name = "Catppuccin";
-      package = pkgs.catppuccin-gtk.override {
-        variant = "mocha";
-        accents = [ "lavender" ];
-        tweaks = [
-          "rimless"
-          "float"
-        ];
-      };
-    };
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme.override { color = "black"; };
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "lavender";
+      };
+    };
+    theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
     };
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
+      name = "Nordzy-cursors";
+      package = pkgs.nordzy-cursor-theme;
+      size = 22;
     };
   };
 }
