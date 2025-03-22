@@ -210,16 +210,6 @@
 
     # windowrule
     windowrule = [
-      "float,Viewnior"
-      "float,imv"
-      "float,mpv"
-      "tile,Aseprite"
-      "float,audacious"
-      "pin,rofi"
-      "pin,waypaper"
-      "tile, neovide"
-      "idleinhibit focus,mpv"
-      "float,udiskie"
       "float,title:^(Transmission)$"
       "float,title:^(Volume Control)$"
       "float,title:^(Firefox — Sharing Indicator)$"
@@ -233,8 +223,6 @@
       "float, title:^(Picture-in-Picture)$"
       "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
       "pin, title:^(Picture-in-Picture)$"
-      "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
-      "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
       "opacity 1.0 override 1.0 override, class:(Aseprite)"
       "opacity 1.0 override 1.0 override, class:(Unity)"
       "opacity 1.0 override 1.0 override, class:(zen)"
@@ -243,7 +231,6 @@
       "workspace 2, class:^(zen)$"
       "workspace 3, class:^(Obsidian)$"
       "workspace 5, class:^(Spotify)$"
-      "idleinhibit focus, class:^(mpv)$"
       "idleinhibit fullscreen, class:^(firefox)$"
       "float,class:^(org.gnome.Calculator)$"
       "float,class:^(waypaper)$"
