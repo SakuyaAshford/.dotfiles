@@ -53,6 +53,7 @@
 
   boot = {
     kernelModules = [ "acpi_call" ];
+    kernelParams = [ "mem_sleep_default=deep" ];
     extraModulePackages =
       with config.boot.kernelPackages;
       [
