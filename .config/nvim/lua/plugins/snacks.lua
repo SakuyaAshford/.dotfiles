@@ -40,6 +40,11 @@ return {
         explorer = {
             enabled = true,
             replace_netrw = true,
+            mapping = {
+                n = {
+                    ["<CR>"] = "edit",
+                },
+            },
         },
         notifier = { enabled = true },
         picker = { enabled = true},
