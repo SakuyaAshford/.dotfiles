@@ -2,6 +2,9 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
+        notify = {
+            enabled = false, -- conflict with snacks.notify / snacks.notifier
+        },
         lsp = {
             override = {
                 ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
