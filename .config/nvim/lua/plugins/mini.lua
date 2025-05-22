@@ -19,7 +19,6 @@ return {
                       { "%u[%l%d]+%f[^%l%d]", "%f[%S][%l%d]+%f[^%l%d]", "%f[%P][%l%d]+%f[^%l%d]", "^[%l%d]+%f[^%l%d]" },
                       "^().*()$",
                     },
-                    g = LazyVim.mini.ai_buffer, -- buffer
                     u = ai.gen_spec.function_call(), -- u for "Usage"
                     U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
                 },
@@ -58,9 +57,16 @@ return {
                 suffix_last = 'l', -- Suffix to search with "prev" method
                 suffix_next = 'n', -- Suffix to search with "next" method
             },
-        }
+            custom_surroundings = {
+                -- Bold
+                B = { input = { '%*%*().-()%*%*' }, output = { left = '**', right = '**' } },
+
+                -- Italic 
+                I = { input = { '%*%*().-()%*%*' }, output = { left = '_', right = '_' } },
+
+                -- Link
+                L = { input = { '%*%*().-()%*%*' }, output = { left = '[[', right = ']]' } },
+            },
+        },
     },
 }
-
-
-
