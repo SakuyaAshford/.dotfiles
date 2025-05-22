@@ -19,29 +19,17 @@ return {
             indent = { enable = true },
             ensure_installed = {
                 "bash",
-                "c",
-                "diff",
                 "html",
                 "javascript",
-                "jsdoc",
-                "json",
-                "jsonc",
                 "lua",
                 "luadoc",
                 "luap",
                 "markdown",
                 "markdown_inline",
-                "printf",
-                "python",
                 "query",
                 "regex",
-                "toml",
-                "tsx",
-                "typescript",
                 "vim",
                 "vimdoc",
-                "xml",
-                "yaml",
             },
             incremental_selection = {
                 enable = true,
@@ -69,12 +57,13 @@ return {
     {
         "windwp/nvim-ts-autotag",
         event = { "BufReadPost", "BufNewFile" },
-        config = function(_, opts)
-            require("nvim-ts-autotag").setup({
-                enable_close = true,     -- Auto close tags
-                enable_rename = true,    -- Auto rename pairs of tags
-                enable_close_on_slash = false, -- Auto close on trailing </
-            })
-        end,
+        opts = {
+            autotag = {
+                enable = true,
+                enable_rename = true,
+                enable_close = true,
+                enable_close_on_slash = true,
+            }
+        },
     },
 }
