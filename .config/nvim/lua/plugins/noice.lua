@@ -3,7 +3,7 @@ return {
     event = "VeryLazy",
     opts = {
         notify = {
-            enabled = false, -- conflict with snacks.notify / snacks.notifier
+            enabled = false, -- for snacks.notify to work 
         },
         lsp = {
             override = {
