@@ -13,10 +13,13 @@
         vimAlias = true;
         extraPackages = with pkgs; [
             # Language server packages (executables)
-            lua-language-server     # Lua
-            nil                     # Nix
-            pyright                 # Python
-            rust-analyzer           # Rust
+            lua-language-server             # Lua
+            nil                             # Nix
+            pyright                         # Python
+            rust-analyzer                   # Rust
+            typescript-language-server      # TypeScript/JavaScript
+            vscode-langservers-extracted    # HTML, CSS, JSON
+            marksman                        # Markdown
         ];
     };
       
