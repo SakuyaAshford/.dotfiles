@@ -54,6 +54,9 @@
     python3
     python312Packages.ipython
 
+    # Rust
+    cargo
+
     # Utility
     # nixfmt-rfc-style
     # treefmt2
