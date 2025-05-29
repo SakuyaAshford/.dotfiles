@@ -297,11 +297,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1748191712,
-        "narHash": "sha256-mcTcxv85ljvg49blvLM/xmRtyyLyorpZZJ2ZAZYrYzg=",
+        "lastModified": 1748295224,
+        "narHash": "sha256-yR8zw5bSEHd28fGfGM64nW8y72NOfxFvvrXcR2p4WUE=",
         "ref": "refs/heads/main",
-        "rev": "2347050285920925db8bc844e3232bc932eef21e",
-        "revCount": 6137,
+        "rev": "be6ee6e55f08387a9e2fbf712c061fb238a70319",
+        "revCount": 6141,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -693,11 +693,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1748026106,
-        "narHash": "sha256-6m1Y3/4pVw1RWTsrkAK2VMYSzG4MMIj7sqUy7o8th1o=",
+        "lastModified": 1748190013,
+        "narHash": "sha256-R5HJFflOfsP5FBtk+zE8FpL8uqE7n62jqOsADvVshhE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "063f43f2dbdef86376cc29ad646c45c46e93234c",
+        "rev": "62b852f6c6742134ade1abdd2a21685fd617a291",
         "type": "github"
       },
       "original": {
@@ -749,11 +749,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1747525582,
-        "narHash": "sha256-oEZ6DV4bPcNZIuwW5Kcd+/zT3PMkXse2kX/3jHoomGk=",
+        "lastModified": 1748298067,
+        "narHash": "sha256-vBwOZ4wwy30Qbik6dPP4m/k+g3z6R2eL26vhPi4tKzA=",
         "owner": "notashelf",
         "repo": "nvf",
-        "rev": "d3a0e7029ac57eef1120225973247851c5b967b5",
+        "rev": "b45f0516a12202c602e080debef926be8a0ebab6",
         "type": "github"
       },
       "original": {
@@ -940,11 +940,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747912973,
-        "narHash": "sha256-XgxghfND8TDypxsMTPU2GQdtBEsHTEc3qWE6RVEk8O0=",
+        "lastModified": 1748243702,
+        "narHash": "sha256-9YzfeN8CB6SzNPyPm2XjRRqSixDopTapaRsnTpXUEY8=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "020cb423808365fa3f10ff4cb8c0a25df35065a3",
+        "rev": "1f3f7b784643d488ba4bf315638b2b0a4c5fb007",
         "type": "github"
       },
       "original": {
@@ -997,11 +997,11 @@
     "yazi-plugins": {
       "flake": false,
       "locked": {
-        "lastModified": 1746940873,
-        "narHash": "sha256-v/C+ZBrF1ghDt1SXpZcDELmHMVAqfr44iWxzUWynyRk=",
+        "lastModified": 1748261538,
+        "narHash": "sha256-PZcVDFuU8cQ8QO8nmwlHpDbT3p61shtREHnJZoC7oPI=",
         "owner": "yazi-rs",
         "repo": "plugins",
-        "rev": "55bf6996ada3df4cbad331ce3be0c1090769fc7c",
+        "rev": "4df8f70eb643963f6b2d32045342fee311ea95fd",
         "type": "github"
       },
       "original": {
