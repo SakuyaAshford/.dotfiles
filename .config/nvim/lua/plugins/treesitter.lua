@@ -6,6 +6,7 @@ return {
         build = ":TSUpdate",
         dependencies = {
             "windwp/nvim-ts-autotag",
+            "nvim-treesitter/nvim-treesitter-textobjects",
         },
         keys = {
             { "<c-space>", desc = "Increment Selection" },
@@ -19,6 +20,8 @@ return {
             indent = { enable = false },
             ensure_installed = {
                 "bash",
+                "css",
+                "scss",
                 "html",
                 "javascript",
                 "lua",

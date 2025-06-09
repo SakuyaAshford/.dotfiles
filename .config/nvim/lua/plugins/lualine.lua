@@ -1,6 +1,7 @@
 return {
     {
         'nvim-lualine/lualine.nvim',
+        enabled = true,
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         event = "VeryLazy",
         opts = {
@@ -9,6 +10,15 @@ return {
                 theme = 'auto',
                 component_separators = '|',
                 section_separators = { left = '', right = '' },
+            },
+            sections = {
+                lualine_x = {
+                    {
+                        require("noice").api.statusline.mode.get,
+                        cond = require("noice").api.statusline.mode.has,
+                        color = { fg = "#ff9e64" },
+                    }
+                },
             },
         },
         init = function()
@@ -23,4 +33,3 @@ return {
         end,
     },
 }
-
