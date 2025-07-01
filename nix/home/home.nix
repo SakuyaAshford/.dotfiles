@@ -22,6 +22,7 @@
     # hyprland
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast # screenshot
     grim
+    slurp
     hyprpicker
     swappy # snapshot editing tool
     swww
@@ -45,6 +46,11 @@
     inputs.zen-browser.packages."${system}".default
 
     # Programming Language
+    nodejs 
+
+    # DB
+    mysql80
+
     # C / C++
     gcc
     gdb
@@ -54,6 +60,13 @@
     python3
     python312Packages.ipython
 
+    # PHP
+    php84
+    php84.packages.composer
+    php84.packages.php-codesniffer
+    # php84.packages.php-cs-fixer # Broken
+    laravel
+
     # Rust
     cargo
 
@@ -61,6 +74,7 @@
     # nixfmt-rfc-style
     # treefmt2
     unzip
+    unrar
     xdg-utils
 
     # bluetooth

@@ -37,6 +37,10 @@
 
     wget
     zsh
+    
+    killall
+
+    zip
 
     # OS
     ntfs3g # NTFS

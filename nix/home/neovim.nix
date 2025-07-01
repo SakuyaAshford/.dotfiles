@@ -17,9 +17,22 @@
             nil                             # Nix
             pyright                         # Python
             rust-analyzer                   # Rust
-            typescript-language-server      # TypeScript/JavaScript
+
+            # PHP language servers 
+            phpactor                        
+            intelephense                    
+
+            # Web development
             vscode-langservers-extracted    # HTML, CSS, JSON
+            vtsls                           # JavaScript/TypeScript
+            tailwindcss-language-server     # Tailwind CSS
+            
+            # Markdown
             marksman                        # Markdown
+
+            # Formatters for better code formatting
+            prettierd                       # JavaScript/TypeScript/CSS/HTML
+            stylua                          # Lua
         ];
     };
       

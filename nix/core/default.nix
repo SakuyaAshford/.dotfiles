@@ -11,6 +11,7 @@
     ./app/syncthing.nix
     ./bootloader.nix
     ./bluetooth.nix
+    ./dev.nix
     ./font.nix
     ./network.nix
     ./program.nix

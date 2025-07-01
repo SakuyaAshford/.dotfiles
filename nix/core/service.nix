@@ -8,6 +8,7 @@
       gcr
       gnome-settings-daemon
     ];
+
   };
   # In your configuration.nix
   services.logind = {
